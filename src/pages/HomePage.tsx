@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "../theme/ThemeContext";
 import { useTranslation } from "react-i18next";
 import PSF from "../assets/PSF.png";
@@ -143,7 +143,7 @@ export default function HomePage() {
                   className="h-14 w-14 flex items-center justify-center"
                 />
                 <div className="flex flex-col gap-4 max-w-[285px]">
-                  <div className="font-bold uppercase">Обучение</div>
+                  <div className="font-bold uppercase">{t("training")}</div>
                   <div className="max-xl:hidden">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -162,7 +162,7 @@ export default function HomePage() {
                   className="h-14 w-14 flex items-center justify-center"
                 />
                 <div className="flex flex-col gap-4 max-w-[285px]">
-                  <div className="font-bold uppercase">Федерация</div>
+                  <div className="font-bold uppercase">{t("federation_")}</div>
                   <div className="max-xl:hidden">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -182,7 +182,7 @@ export default function HomePage() {
                 />
                 <div className="flex flex-col gap-4 max-w-[285px]">
                   <div className="font-bold uppercase">
-                    Тренерско-конструкторский корпус
+                    {t("training-constructoral")}
                   </div>
                   <div className="max-xl:hidden">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -197,91 +197,91 @@ export default function HomePage() {
         </div>
       </section>
       <section
-        className="h-full w-full bg-white dark:bg-[#242424]"
+        className="h-full w-full bg-white dark:bg-[#242424] "
         ref={sectionRefs[1]}
       >
-        <div className="relative max-w-[1440px] mx-auto">
-          <Rectangleaim
-            color={theme !== "dark" ? "#DBAD38" : "#FFEAD1"}
-            className="w-60 flex items-center justify-center absolute left-0 top-40"
-          />
-        </div>
-        <div className="h-[calc(100vh-96px)] max-w-[1364px] mx-auto flex items-center gap-12 ">
-          <div className="w-2/5 z-10">
-            <img src={crazyman} alt="" width={576} />
-          </div>
-          <div className="w-3/5 flex flex-col gap-8">
-            <div className="flex items-center gap-4">
-              <Aim
-                color={theme !== "dark" ? "#DBAD38" : "#FFEAD1"}
-                className="h-12 w-12 flex items-center justify-center"
-              />
-              <div
-                className={`text-2xl text-${
-                  theme !== "dark" ? "[#DBAD38]" : "[#FFEAD1]"
-                } font-bold`}
-              >
-                <span className="uppercase">Основные цели&nbsp;</span>
-                <span className="uppercase">Федерации</span>
-              </div>
+        <div className="h-full w-full relative max-w-[1440px] mx-auto flex items-center">
+          <div className="absolute left-0 max-w-[1440px] mx-auto">
+            <div className="ml-8 w-[625px] h-[425px]  max-2xl:hidden z-10 relative">
+              <img src={crazyman} alt="" width={576} />
             </div>
-            <div className="flex flex-col gap-8">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quaerat, quisquam harum nemo neque sapiente accusantium
-                voluptatum beatae blanditiis numquam accusamus architecto
-                assumenda quasi facilis mollitia, nobis, sunt ducimus possimus
-                tenetur!
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                ipsum recusandae nulla deserunt sed minima odio quam corrupti!
-                Fuga ex facilis odit, vero explicabo quas quibusdam soluta id
-                sunt quisquam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus impedit saepe beatae eveniet totam nulla voluptatem
-                repellendus ducimus neque, perferendis cumque quibusdam, quas
-                magni pariatur dolor laboriosam ipsa laborum ex!
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus impedit saepe beatae eveniet totam nulla voluptatem
-                repellendus ducimus neque, perferendis cumque quibusdam.
-              </p>
+            <Rectangleaim
+              color={theme !== "dark" ? "#DBAD38" : "#FFEAD1"}
+              className="w-60 flex items-center justify-center absolute -top-12"
+            />
+          </div>
+          <div className="h-[calc(100vh-96px)] max-w-[1364px] mx-auto flex items-center">
+            <div className="w-1/2"></div>
+            <div className="w-1/2 flex flex-col gap-8">
+              <div className="flex items-center gap-4">
+                <Aim
+                  color={theme !== "dark" ? "#DBAD38" : "#FFEAD1"}
+                  className="h-12 w-12 flex items-center justify-center"
+                />
+                <div
+                  className={`text-2xl text-${
+                    theme !== "dark" ? "[#DBAD38]" : "[#FFEAD1]"
+                  } font-bold`}
+                >
+                  <span className="uppercase">{t("maingoals")}&nbsp;</span>
+                  <span className="uppercase">{t("offederation")}</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-8">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quaerat, quisquam harum nemo neque sapiente accusantium
+                  voluptatum beatae blanditiis numquam accusamus architecto
+                  assumenda quasi facilis mollitia, nobis, sunt ducimus possimus
+                  tenetur!
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae ipsum recusandae nulla deserunt sed minima odio quam
+                  corrupti! Fuga ex facilis odit, vero explicabo quas quibusdam
+                  soluta id sunt quisquam?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Possimus impedit saepe beatae eveniet totam nulla voluptatem
+                  repellendus ducimus neque, perferendis cumque quibusdam, quas
+                  magni pariatur dolor laboriosam ipsa laborum ex!
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Possimus impedit saepe beatae eveniet totam nulla voluptatem
+                  repellendus ducimus neque, perferendis cumque quibusdam.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section
-        className="h-full w-full dark:bg-[#242424] py-8"
-        ref={sectionRefs[2]}
-      >
-        <div className="h-[calc(100vh-96px)] max-w-[1364px] mx-auto flex flex-col">
+      <section className="h-full w-full dark:bg-[#242424]" ref={sectionRefs[2]}>
+        <div className="h-[calc(100vh-96px)] max-w-[1364px] mx-auto flex flex-col justify-center">
           <div
             className={`uppercase ${
               theme !== "dark" ? "text-[#DBAD38]" : "text-[#FFEAD1]"
             } font-bold text-2xl`}
           >
-            Новости
+            {t("news")}
           </div>
-          <div className="flex mt-4 gap-8">
-            <div className="w-1/3 flex flex-col  rounded-lg dark:shadow-xl">
+          <div className="flex mt-4 gap-8 justify-between">
+            <div className="w-1/3 pr-8 flex flex-col rounded-lg dark:shadow-xl">
               <img src={shooterleft} alt="" />
               <div className="text-left p-4 bg-white dark:bg-[#2D2D2D] rounded-b-2xl shadow-lg">
                 Быстрее, выше, точнее: что такое практическая стрельба и где в
                 Узбекистане можно научиться меткости
               </div>
             </div>
-            <div className="w-1/3 flex flex-col rounded-lg dark:shadow-xl">
+            <div className="w-1/3 px-4  flex flex-col rounded-lg dark:shadow-xl">
               <img src={rifleshooting} alt="" />
               <div className="text-left p-4 bg-white dark:bg-[#2D2D2D] rounded-b-2xl shadow-lg">
                 Турнир по практической стрельбе прошел в Ташкенте. В меткости
                 состязались команды из республиканских ...
               </div>
             </div>
-            <div className="w-1/3 flex flex-col  rounded-lg dark:shadow-xl">
+            <div className="w-1/3 pl-8 flex flex-col rounded-lg dark:shadow-xl">
               <img src={photograph} alt="" />
               <div className="text-left p-4 bg-white dark:bg-[#2D2D2D] rounded-b-2xl shadow-lg">
                 Быстрее, выше, точнее: что такое практическая стрельба и где в
@@ -291,21 +291,21 @@ export default function HomePage() {
           </div>
 
           <div className="flex mt-4 gap-8">
-            <div className="w-1/3 flex flex-col rounded-lg dark:shadow-xl">
+            <div className="w-1/3 pr-8 flex flex-col rounded-lg dark:shadow-xl">
               <img src={rifleshooting} alt="" />
               <div className="text-left p-4 bg-white dark:bg-[#2D2D2D] rounded-b-2xl shadow-lg">
                 Турнир по практической стрельбе прошел в Ташкенте. В меткости
                 состязались команды из республиканских ...
               </div>
             </div>
-            <div className="w-1/3 flex flex-col  rounded-lg dark:shadow-xl">
+            <div className="w-1/3 px-4 flex flex-col  rounded-lg dark:shadow-xl">
               <img src={photograph} alt="" />
               <div className="text-left p-4 bg-white dark:bg-[#2D2D2D] rounded-b-2xl shadow-lg">
                 Быстрее, выше, точнее: что такое практическая стрельба и где в
                 Узбекистане можно научиться меткости
               </div>
             </div>
-            <div className="w-1/3 flex flex-col  rounded-lg dark:shadow-xl">
+            <div className="w-1/3 pl-4 flex flex-col  rounded-lg dark:shadow-xl">
               <img src={shooterleft} alt="" />
               <div className="text-left p-4 bg-white dark:bg-[#2D2D2D] rounded-b-2xl shadow-lg">
                 Быстрее, выше, точнее: что такое практическая стрельба и где в
@@ -316,42 +316,50 @@ export default function HomePage() {
         </div>
       </section>
       <section
-        className="h-full w-full bg-white dark:bg-[#242424]"
+        className="h-full w-full bg-white dark:bg-[#242424] mx-auto flex items-center"
         ref={sectionRefs[3]}
       >
-        <div className="relative max-w-[1440px] mx-auto">
-          <Rectangleaim2
-            color={theme !== "dark" ? "#DBAD38" : "#FFEAD1"}
-            className="w-64 flex items-center justify-center absolute right-2 top-44"
-          />
-        </div>
-        <div className="h-[calc(100vh-96px)] max-w-[1364px] mx-auto flex justify-between items-center">
-          <div className="flex flex-col gap-12 w-1/2">
-            <div className="font-bold text-2xl leading-[48px]">
-              Федерация приглашает Вас получить опыт безопасного обращения с
-              оружием под руководством наших инструкторов
-            </div>
-
-            <div className="leading-8">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-              id officia voluptatum molestias neque modi, ipsam error eius natus
-              maxime nam quia iusto expedita optio omnis labore? Aspernatur,
-              quisquam aliquam. Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Obcaecati, dolor. Minus repudiandae earum
-              numquam modi veniam soluta placeat ipsam maiores, et architecto ad
-              esse dignissimos incidunt ab, dolore atque. Totam.
-            </div>
-            <div>
-              <button
-                type="button"
-                className=" text-black bg-[#e6b172] hover:bg-[#dfc482] px-8 py-4 rounded-lg shadow-lg"
-              >
-                Записаться
-              </button>
+        <div className="h-full w-full relative max-w-[1440px] mx-auto flex items-center">
+          <div className="absolute right-0 max-w-[1440px] mx-auto">
+            <Rectangleaim2
+              color={theme !== "dark" ? "#DBAD38" : "#FFEAD1"}
+              className="w-64 flex items-center justify-center absolute right-0 -top-10"
+            />
+            <div className="w-[510px] h-[405px] z-20 relative">
+              <img
+                src={twoaimsred}
+                alt=""
+                width={540}
+                className="absolute top-0 right-8"
+              />
             </div>
           </div>
-          <div className="w-[510px] h-[405px] z-20">
-            <img src={twoaimsred} alt="" width={540} />
+
+          <div className="h-[calc(100vh-96px)] max-w-[1364px] mx-auto flex justify-between items-center">
+            <div className="flex flex-col gap-12 w-1/2">
+              <div className="font-bold text-2xl leading-[48px]">
+                {t("calltofederation")}
+              </div>
+
+              <div className="leading-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Ducimus id officia voluptatum molestias neque modi, ipsam error
+                eius natus maxime nam quia iusto expedita optio omnis labore?
+                Aspernatur, quisquam aliquam. Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Obcaecati, dolor. Minus
+                repudiandae earum numquam modi veniam soluta placeat ipsam
+                maiores, et architecto ad esse dignissimos incidunt ab, dolore
+                atque. Totam.
+              </div>
+              <div>
+                <button
+                  type="button"
+                  className=" text-black bg-[#e6b172] hover:bg-[#dfc482] px-8 py-4 rounded-lg shadow-lg"
+                >
+                  {t("register")}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -451,9 +459,9 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <hr className="bg-gray-700 border-0 h-0.5 mb-12" />
+          <hr className="bg-gray-700 border-0 h-0.5 mb-4" />
 
-          <div className="flex flex-wrap gap-4 justify-between mb-12 items-center text-white p-4 shadow-lg rounded-lg">
+          <div className="flex flex-wrap gap-2 justify-between mb-4 items-center text-white p-4 shadow-lg rounded-lg">
             <div className="flex items-center gap-4">
               <img src={logosmall} alt="" width={50} />
               <div className="w-72 uppercase font-bold">{t("federation")}</div>
@@ -464,7 +472,7 @@ export default function HomePage() {
                 className="h-10 w-10 flex items-center justify-center"
               />
               <div className="flex flex-col">
-                <span className="font-bold">Адрес</span>
+                <span className="font-bold">{t("address")}</span>
                 <span>Lorem ipsum dolor sit amet, consetetur</span>
               </div>
             </div>
@@ -474,15 +482,15 @@ export default function HomePage() {
                 className="h-9 w-9 flex items-center justify-center"
               />
               <div className="flex flex-col">
-                <span className="font-bold">Контакты</span>
+                <span className="font-bold">{t("contact")}</span>
                 <span>97 777 77 77 </span>
               </div>
             </div>
           </div>
 
-          <hr className="bg-gray-700 border-0 h-0.5 mb-12" />
+          <hr className="bg-gray-700 border-0 h-0.5 mb-10" />
 
-          <div>
+          <div className={theme !== "dark" ? "text-white" : "text-white"}>
             {" "}
             <span>&copy;&nbsp;2024</span> <span>{t("federation")}</span>
           </div>

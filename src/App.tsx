@@ -5,13 +5,9 @@ import Layout from "./layout/Layout";
 import HomePage from "./pages/HomePage";
 import NotfoundPage from "./pages/NotfoundPage";
 const App: FC = () => {
-  const isBrowserDefaulDark = () =>
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-
   const getDefaultTheme = (): string => {
     const localStorageTheme = localStorage.getItem("default-theme");
-    const browserDefault = isBrowserDefaulDark() ? "dark" : "light";
-    return localStorageTheme || browserDefault;
+    return localStorageTheme || "dark";
   };
 
   const [theme, setTheme] = useState(getDefaultTheme());
